@@ -1,0 +1,6 @@
+export const todoActiontype ={
+  ADD_TODO: 'ADD_TODO',
+  REMOVE_TODO: 'REMOVE_TODO',
+  TODO_DONE: 'TODO_DONE',
+  GET_TODO_STORE: 'GET_TODO_STORE',
+}
