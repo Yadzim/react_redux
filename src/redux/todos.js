@@ -5,7 +5,7 @@ const initialState = [];
 const todos = (state = initialState, action) => {
   switch(action.type){
     case todoActiontype.ADD_TODO:
-      return state.push(action.payload);
+      return [...state, action.payload]
 
     case todoActiontype.REMOVE_TODO:
       return state.filter(item => item.id !== action.payload.id);

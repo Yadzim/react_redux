@@ -17,11 +17,13 @@ const TodoItem = ({ todo }) => {
   const checkRef = useRef(null);
 
   const handleIsDone = (e) => {
+    const date = new Date().valueOf()
     dispatch(
       isDone({
         id: todo.id,
         text: todo.text,
         isDone: e.target.checked,
+        date
       })
     );
   };

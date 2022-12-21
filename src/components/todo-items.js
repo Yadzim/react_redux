@@ -7,11 +7,17 @@ import { CardContent, List } from "@mui/material";
 const TodoItems = () => {
   const data = useSelector((state) => state.todos);
 
+  const sortTodo = (a,b) => {
+    // if(a.isDone > b.isDone) return 1
+    // if(a.date > b.date) return 2
+    // return 0
+  }
+
   return (
     <CardContent>
       <List>
         {data?.length ? (
-          data.map((item) => <TodoItem key={item.id} todo={item} />)
+          data.sort((a,b) => a.isDone - b.isDone).map((item) => <TodoItem key={item.id} todo={item} />)
         ) : (
           <div className='d-flex align-items-center flex-column my-4 text-secondary'>
             <ImFilesEmpty size={24} />

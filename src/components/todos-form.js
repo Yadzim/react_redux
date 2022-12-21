@@ -13,12 +13,14 @@ const TodoForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (String(inputRef.current.value).trim().length > 0) {
+    if (inputRef.current.value.trim().length > 0) {
+      const date = new Date().valueOf()
       dispach(
         addTodo({
           text: inputRef.current.value,
           id: uuidv4(),
           isDone: false,
+          date: date,
         })
       );
     }
