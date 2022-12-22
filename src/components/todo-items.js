@@ -17,7 +17,7 @@ const TodoItems = () => {
     <CardContent>
       <List>
         {data?.length ? (
-          data.sort((a,b) => a.isDone - b.isDone).map((item) => <TodoItem key={item.id} todo={item} />)
+          data.sort((a,b) => (a.isDone - b.isDone) || (a.date - b.date)).map((item) => <TodoItem key={item.id} todo={item} />)
         ) : (
           <div className='d-flex align-items-center flex-column my-4 text-secondary'>
             <ImFilesEmpty size={24} />

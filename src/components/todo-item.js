@@ -11,6 +11,7 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
+import moment from "moment/moment";
 
 const TodoItem = ({ todo }) => {
   const dispatch = useDispatch();
@@ -52,7 +53,7 @@ const TodoItem = ({ todo }) => {
           />
           <ListItemText
             className={`${todo.isDone ? "text-decoration-line-through" : ""}`}
-            primary={todo.text}
+            primary={<><p>todo.text</p> <span>{moment(todo.date).format("HH:mm:ss")+":"+moment(todo.date).millisecond()}</span></>}
           />
         </ListItemIcon>
       </ListItemButton>

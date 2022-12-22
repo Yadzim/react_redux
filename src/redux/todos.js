@@ -14,7 +14,8 @@ const todos = (state = initialState, action) => {
       return state.map(item => {
         if(item.id === action.payload.id) return {
           ...item,
-          isDone: action.payload.isDone
+          isDone: action.payload.isDone,
+          date: action.payload.date,
         }
         else return item
       })
