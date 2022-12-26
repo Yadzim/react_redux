@@ -53,7 +53,7 @@ const TodoItem = ({ todo }) => {
           />
           <ListItemText
             className={`${todo.isDone ? "text-decoration-line-through" : ""}`}
-            primary={<><p>todo.text</p> <span>{moment(todo.date).format("HH:mm:ss")+":"+moment(todo.date).millisecond()}</span></>}
+            primary={<><p>{todo.text}</p> <span>{moment(todo.date).format("HH:mm:ss")+":"+moment(todo.date).millisecond()}</span></>}
           />
         </ListItemIcon>
       </ListItemButton>
